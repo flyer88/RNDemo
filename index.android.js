@@ -5,17 +5,29 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules
 } from 'react-native';
 
+import  CustomToast from './src/PunchhToastAndroid';
+
+
 class HelloWorld extends React.Component {
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.hello}>Hello, World</Text>
+      <View>
+      <Text style={styles.hello}>Hello, World Android</Text>
       </View>
     )
   }
+
+    componentDidMount()
+    {
+        var RCTToastAndroid = require('NativeModules').ToastAndroid;
+        RCTToastAndroid.showMessage();
+    }
+
 }
 var styles = StyleSheet.create({
   container: {
