@@ -1,2 +1,3 @@
 import { NativeModules } from 'react-native';
-module.exports = NativeModules.ToastPunchhMain;
+module.exports = NativeModules.ToastPunchh;
+

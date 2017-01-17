@@ -24,8 +24,8 @@ class HelloWorld extends React.Component {
 
     componentDidMount()
     {
-        var RCTToastAndroid = require('NativeModules').ToastAndroid;
-        RCTToastAndroid.showMessage();
+       CustomToast.showMessage();
+
     }
 
 }
