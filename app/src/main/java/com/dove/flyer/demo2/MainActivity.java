@@ -39,7 +39,7 @@ public class MainActivity extends ReactActivity implements DefaultHardwareBackBt
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 //.setUseOldBridge(true) // uncomment this line if your app crashes
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "RNDemo", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
 
         setContentView(mReactRootView);
     }
