@@ -25,6 +25,7 @@ public class ToastPunchh extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showMessage() {
+        finish();
         Toast.makeText(getReactApplicationContext(), "message", Toast.LENGTH_LONG).show();
     }
 

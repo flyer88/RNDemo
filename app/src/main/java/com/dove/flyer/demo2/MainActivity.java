@@ -37,7 +37,7 @@ public class MainActivity extends ReactActivity implements DefaultHardwareBackBt
                 .addPackage(new MainReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
-              //  .setCurrentActivity(this)
+                .setCurrentActivity(MainActivity.this)
 
                 //.setUseOldBridge(true) // uncomment this line if your app crashes
                 .build();
