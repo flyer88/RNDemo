@@ -19,7 +19,7 @@ public class AnExampleReactPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new ToastPunchh(reactContext));
+        modules.add(new ToastCustomModule(reactContext));
         return modules;
     }
 
