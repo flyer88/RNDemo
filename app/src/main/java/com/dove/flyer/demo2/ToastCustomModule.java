@@ -22,9 +22,9 @@ public class ToastCustomModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showMessage() {
+    public void showMessage(String message) {
         finish();
-        Toast.makeText(getReactApplicationContext(), "message", Toast.LENGTH_LONG).show();
+        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
     public void finish() {
