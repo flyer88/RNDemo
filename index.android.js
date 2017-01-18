@@ -9,8 +9,7 @@ import {
   NativeModules
 } from 'react-native';
 
-import  CustomToast from './src/PunchhToastAndroid';
-
+var RCTToastAndroid  = NativeModules.ToastAndroid;
 
 class HelloWorld extends React.Component {
 
@@ -24,7 +23,11 @@ class HelloWorld extends React.Component {
 
     componentDidMount()
     {
-       CustomToast.showMessage();
+     // CustomToast.showMessage();
+     //   var RCTToastAndroid = require('NativeModules').ToastPunchh
+     //   RCTToastAndroid.showMessage();
+    //   debugger;
+     RCTToastAndroid.show('Awesome', ToastAndroid.SHORT);
 
     }
 

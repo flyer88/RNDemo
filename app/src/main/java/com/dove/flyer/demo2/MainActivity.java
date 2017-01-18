@@ -37,6 +37,8 @@ public class MainActivity extends ReactActivity implements DefaultHardwareBackBt
                 .addPackage(new MainReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
+              //  .setCurrentActivity(this)
+
                 //.setUseOldBridge(true) // uncomment this line if your app crashes
                 .build();
         mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
@@ -68,7 +70,7 @@ public class MainActivity extends ReactActivity implements DefaultHardwareBackBt
         return super.onKeyUp(keyCode, event);
     }
 
-    public void senDataToReactNative() {
+ /*   public void senDataToReactNative() {
         try {
             WritableMap event = Arguments.createMap();
             event.putString("message", "MyMessage");
@@ -79,13 +81,11 @@ public class MainActivity extends ReactActivity implements DefaultHardwareBackBt
         } catch (Exception ex) {
 
         }
-    }
+    }*/
 
- /*   @ReactMethod
     public void myMethod(String message) {
         // Here we show a toast message
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         Log.e("sahir","sahir");
     }
-*/
 }
