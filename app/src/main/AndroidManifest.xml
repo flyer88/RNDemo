@@ -14,7 +14,7 @@
         >
         <activity
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".MainPunchh">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainReactActivity"></activity>
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
     </application>
