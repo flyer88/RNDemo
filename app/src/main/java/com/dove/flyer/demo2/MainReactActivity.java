@@ -30,7 +30,7 @@ public class MainReactActivity extends ReactActivity {
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
                 .addPackage(new MainReactPackage())
-               // .addPackage(new AnExampleReactPackage())
+                .addPackage(new AnExampleReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .setCurrentActivity(MainReactActivity.this)
@@ -38,7 +38,6 @@ public class MainReactActivity extends ReactActivity {
         mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
         setContentView(mReactRootView);
     }
-
 
 
     @Nullable
@@ -86,6 +85,6 @@ public class MainReactActivity extends ReactActivity {
     public void myMethod(String message) {
         // Here we show a toast message
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        Log.e("sahir","sahir");
+        Log.e("sahir", "sahir");
     }
 }

@@ -9,7 +9,7 @@ import {
   NativeModules
 } from 'react-native';
 
-var RCTToastAndroid  = NativeModules.ToastCustomModule;
+//var RCTToastAndroid  = NativeModules.ToastCustomModule;
 
 class HelloWorld extends React.Component {
 
@@ -24,11 +24,10 @@ class HelloWorld extends React.Component {
     componentDidMount()
     {
      // CustomToast.showMessage();
-     //   var RCTToastAndroid = require('NativeModules').ToastPunchh
+      var RCTToastAndroid = require('NativeModules').ToastCustomModule
      //   RCTToastAndroid.showMessage();
     //   debugger;
-     RCTToastAndroid.showMessage('Awesome');
-
+      RCTToastAndroid.showMessage('Awesome');
     }
 
 }
