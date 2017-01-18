@@ -35,6 +35,4 @@ public class ToastCustomModule extends ReactContextBaseJavaModule {
             activity.myMethod("message");
         }
     }
-
-
 }
