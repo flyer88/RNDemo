@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   View,
-  NativeModules
+  NativeModules,
 } from 'react-native';
 
 //var RCTToastAndroid  = NativeModules.ToastCustomModule;
@@ -16,7 +16,7 @@ class HelloWorld extends React.Component {
   render() {
     return (
       <View>
-      <Text style={styles.hello}>Hello, World Android</Text>
+          <Text>{this.props.message}</Text>
       </View>
     )
   }
