@@ -9,9 +9,13 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.common.LifecycleState;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.shell.MainReactPackage;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import javax.annotation.Nullable;
 
@@ -24,6 +28,12 @@ public class MainReactActivity extends ReactActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Bundle initialProps = new Bundle();
+        initialProps.putString("message", "Hello World Sahir saiyed android");
+      //  initialProps.putStringArrayList();
+
+        //initialProps.putA
+
         mReactRootView = new ReactRootView(MainReactActivity.this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
@@ -35,7 +45,7 @@ public class MainReactActivity extends ReactActivity {
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .setCurrentActivity(MainReactActivity.this)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", initialProps);
         setContentView(mReactRootView);
     }
 
@@ -71,12 +81,21 @@ public class MainReactActivity extends ReactActivity {
     }
 
     public void senDataToReactNative() {
+
+        ReactContext reactContext =  null;
         try {
+
+           // WritableNativeArray
+          //  WritableNativeArr
             WritableMap event = Arguments.createMap();
             event.putString("message", "MyMessage");
+           //event.putArray();
             //event.putArray();
             //ReactContext reactContext = (ReactContext) getContext();
-            //reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(getId("topChange", event);
+            reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("eventName", event);
+
+
         } catch (Exception ex) {
 
         }
