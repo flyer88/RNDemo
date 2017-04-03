@@ -2,6 +2,7 @@ package com.dove.flyer.demo2;
 
 import android.widget.Toast;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -24,9 +25,21 @@ public class ToastCustomModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showMessage(String message) {
+    public void showMessage(String message, Callback successCallback) {
+
         finish();
-        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
+    /*    if(true)
+        {
+            successCallback.invoke("Message");
+            Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
+        }else{
+            errorCallback.invoke("Er Message");
+        }*/
+        String finalMsg = message +" Test "+" final message";
+
+        Toast.makeText(getReactApplicationContext(), finalMsg, Toast.LENGTH_LONG).show();
+        successCallback.invoke(finalMsg);
+
     }
 
     public void finish() {
