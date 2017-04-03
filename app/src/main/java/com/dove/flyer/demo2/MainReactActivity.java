@@ -3,6 +3,8 @@ package com.dove.flyer.demo2;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
@@ -11,11 +13,9 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.shell.MainReactPackage;
-import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import javax.annotation.Nullable;
 
@@ -30,11 +30,10 @@ public class MainReactActivity extends ReactActivity {
 
         Bundle initialProps = new Bundle();
         initialProps.putString("message", "Hello World Sahir saiyed android");
-      //  initialProps.putStringArrayList();
-
-        //initialProps.putA
-
         mReactRootView = new ReactRootView(MainReactActivity.this);
+
+
+
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
@@ -45,8 +44,39 @@ public class MainReactActivity extends ReactActivity {
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .setCurrentActivity(MainReactActivity.this)
                 .build();
+
+
+
+       /* ViewGroup.LayoutParams params = mReactRootView.getLayoutParams();
+
+        params.height = 50;
+        params.width = 100;
+       */
+
+     //   mReactRootView.setLayoutParams(new FrameLayout.LayoutParams(50,50));
+
+
+        Button createdButton = new Button(MainReactActivity.this);
+        createdButton.setText("roomName");
+        //createdButton.setBackground(R.drawable.ic);
+        createdButton.setWidth(50);
+        createdButton.setHeight(50);
+
+        ReactRootView.LayoutParams params = new ReactRootView.LayoutParams(
+                ReactRootView.LayoutParams.WRAP_CONTENT,
+                ReactRootView.LayoutParams.WRAP_CONTENT);
+
+
+        mReactRootView.addView(createdButton,params);
+
+       /* ViewGroup.LayoutParams params = mReactRootView.getLayoutParams();
+        params.height = 50;
+        params.width = 100;
+        mReactRootView.setLayoutParams(params);*/
         mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", initialProps);
         setContentView(mReactRootView);
+        //mReactRootView = mReactRootView.getReactRootView();
+
     }
 
 
@@ -82,14 +112,14 @@ public class MainReactActivity extends ReactActivity {
 
     public void senDataToReactNative() {
 
-        ReactContext reactContext =  null;
+        ReactContext reactContext = null;
         try {
 
-           // WritableNativeArray
-          //  WritableNativeArr
+            // WritableNativeArray
+            //  WritableNativeArr
             WritableMap event = Arguments.createMap();
             event.putString("message", "MyMessage");
-           //event.putArray();
+            //event.putArray();
             //event.putArray();
             //ReactContext reactContext = (ReactContext) getContext();
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
@@ -101,9 +131,27 @@ public class MainReactActivity extends ReactActivity {
         }
     }
 
-    public void myMethod(String message) {
+    public String myMethod(String message) {
         // Here we show a toast message
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message +" tight", Toast.LENGTH_SHORT).show();
+      /*  Button createdButton = new Button(MainReactActivity.this);
+        createdButton.setText("roomName");
+        mReactRootView.addView(createdButton);
+*/
+      //  mReactRootView.add
+        //createdButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        //mReactRootView.addView(createdButton);
+
+       // mReactRootView
+
+     //   mReactRootView
+
+        ViewGroup.LayoutParams params = new ReactRootView.LayoutParams(
+                ReactRootView.LayoutParams.WRAP_CONTENT,
+                ReactRootView.LayoutParams.WRAP_CONTENT);
+
+
         Log.e("sahir", "sahir");
+        return "line 108";
     }
 }

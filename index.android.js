@@ -9,14 +9,15 @@ import {
   NativeModules,
 } from 'react-native';
 
-//var RCTToastAndroid  = NativeModules.ToastCustomModule;
+var RCTToastAndroid  = NativeModules.ToastCustomModule;
 
 class HelloWorld extends React.Component {
 
   render() {
     return (
       <View>
-          <Text>{this.props.message}</Text>
+            <Text>sahir saiyed ali</Text>
+            <Text>sahir saiyed ali</Text>
       </View>
     )
   }
@@ -24,12 +25,13 @@ class HelloWorld extends React.Component {
     componentDidMount()
     {
      // CustomToast.showMessage();
-      var RCTToastAndroid = require('NativeModules').ToastCustomModule
+        // var RCTToastAndroid = require('NativeModules').ToastCustomModule
      //   RCTToastAndroid.showMessage();
     //   debugger;
-      RCTToastAndroid.showMessage('Awesome');
+        RCTToastAndroid.showMessage('Awesome', (result) => {
+        console.log("line 31",result);
+      });
     }
-
 }
 var styles = StyleSheet.create({
   container: {
