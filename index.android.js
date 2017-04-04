@@ -13,21 +13,22 @@ var RCTToastAndroid  = NativeModules.ToastCustomModule;
 
 class HelloWorld extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+  }
+
   render() {
     return (
       <View>
-            <Text>Hi Android</Text>
-            <Text>Hi IOS</Text>
+            <Text> { this.props.message }</Text>
+            <Text>Hello IOS </Text>
       </View>
     )
   }
 
     componentDidMount()
     {
-     // CustomToast.showMessage();
-        // var RCTToastAndroid = require('NativeModules').ToastCustomModule
-     //   RCTToastAndroid.showMessage();
-    //   debugger;
         RCTToastAndroid.showMessage('Awesome', (result) => {
         console.log("line 31",result);
       });
