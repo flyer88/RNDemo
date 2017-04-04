@@ -20,6 +20,11 @@ import com.facebook.react.shell.MainReactPackage;
 import javax.annotation.Nullable;
 
 
+/**
+ * The type Main react activity.
+ * @author Sahir Saiyed
+ * https://github.com/sahir
+ */
 public class MainReactActivity extends ReactActivity {
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
@@ -29,7 +34,7 @@ public class MainReactActivity extends ReactActivity {
         super.onCreate(savedInstanceState);
 
         Bundle initialProps = new Bundle();
-        initialProps.putString("message", "Hello World Sahir saiyed android");
+        initialProps.putString("message", "Hello Android");
         mReactRootView = new ReactRootView(MainReactActivity.this);
 
         mReactInstanceManager = ReactInstanceManager.builder()
@@ -42,7 +47,6 @@ public class MainReactActivity extends ReactActivity {
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .setCurrentActivity(MainReactActivity.this)
                 .build();
-
 
         mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", initialProps);
         setContentView(mReactRootView);
@@ -80,7 +84,7 @@ public class MainReactActivity extends ReactActivity {
         return super.onKeyUp(keyCode, event);
     }
 
-    public void senDataToReactNative() {
+   /* public void senDataToReactNative() {
 
         ReactContext reactContext = null;
         try {
@@ -93,10 +97,16 @@ public class MainReactActivity extends ReactActivity {
         } catch (Exception ex) {
 
         }
-    }
+    }*/
 
+    /**
+     * My method string.
+     *
+     * @param message the message
+     * @return the string
+     */
     public String myMethod(String message) {
-        Toast.makeText(this, message +" tight", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message +" from Android Activity", Toast.LENGTH_SHORT).show();
         return "line 108";
     }
 }
