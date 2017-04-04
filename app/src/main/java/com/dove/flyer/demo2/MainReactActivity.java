@@ -32,8 +32,6 @@ public class MainReactActivity extends ReactActivity {
         initialProps.putString("message", "Hello World Sahir saiyed android");
         mReactRootView = new ReactRootView(MainReactActivity.this);
 
-
-
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
@@ -46,36 +44,8 @@ public class MainReactActivity extends ReactActivity {
                 .build();
 
 
-
-       /* ViewGroup.LayoutParams params = mReactRootView.getLayoutParams();
-
-        params.height = 50;
-        params.width = 100;
-       */
-
-     //   mReactRootView.setLayoutParams(new FrameLayout.LayoutParams(50,50));
-
-
-        Button createdButton = new Button(MainReactActivity.this);
-        createdButton.setText("roomName");
-        //createdButton.setBackground(R.drawable.ic);
-        createdButton.setWidth(50);
-        createdButton.setHeight(50);
-
-        ReactRootView.LayoutParams params = new ReactRootView.LayoutParams(
-                ReactRootView.LayoutParams.WRAP_CONTENT,
-                ReactRootView.LayoutParams.WRAP_CONTENT);
-
-
-        mReactRootView.addView(createdButton,params);
-
-       /* ViewGroup.LayoutParams params = mReactRootView.getLayoutParams();
-        params.height = 50;
-        params.width = 100;
-        mReactRootView.setLayoutParams(params);*/
         mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", initialProps);
         setContentView(mReactRootView);
-        //mReactRootView = mReactRootView.getReactRootView();
 
     }
 
@@ -114,14 +84,8 @@ public class MainReactActivity extends ReactActivity {
 
         ReactContext reactContext = null;
         try {
-
-            // WritableNativeArray
-            //  WritableNativeArr
             WritableMap event = Arguments.createMap();
             event.putString("message", "MyMessage");
-            //event.putArray();
-            //event.putArray();
-            //ReactContext reactContext = (ReactContext) getContext();
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("eventName", event);
 
@@ -132,26 +96,7 @@ public class MainReactActivity extends ReactActivity {
     }
 
     public String myMethod(String message) {
-        // Here we show a toast message
         Toast.makeText(this, message +" tight", Toast.LENGTH_SHORT).show();
-      /*  Button createdButton = new Button(MainReactActivity.this);
-        createdButton.setText("roomName");
-        mReactRootView.addView(createdButton);
-*/
-      //  mReactRootView.add
-        //createdButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        //mReactRootView.addView(createdButton);
-
-       // mReactRootView
-
-     //   mReactRootView
-
-        ViewGroup.LayoutParams params = new ReactRootView.LayoutParams(
-                ReactRootView.LayoutParams.WRAP_CONTENT,
-                ReactRootView.LayoutParams.WRAP_CONTENT);
-
-
-        Log.e("sahir", "sahir");
         return "line 108";
     }
 }

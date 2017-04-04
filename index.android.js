@@ -16,8 +16,8 @@ class HelloWorld extends React.Component {
   render() {
     return (
       <View>
-            <Text>sahir saiyed ali</Text>
-            <Text>sahir saiyed ali</Text>
+            <Text>Hi Android</Text>
+            <Text>Hi IOS</Text>
       </View>
     )
   }

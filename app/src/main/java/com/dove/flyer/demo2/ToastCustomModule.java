@@ -27,22 +27,16 @@ public class ToastCustomModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void showMessage(String message, Callback successCallback) {
 
-        finish();
-    /*    if(true)
-        {
-            successCallback.invoke("Message");
-            Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
-        }else{
-            errorCallback.invoke("Er Message");
-        }*/
         String finalMsg = message +" Test "+" final message";
 
         Toast.makeText(getReactApplicationContext(), finalMsg, Toast.LENGTH_LONG).show();
         successCallback.invoke(finalMsg);
 
+        callingActivityMethod();
+
     }
 
-    public void finish() {
+    public void callingActivityMethod() {
         MainReactActivity activity = (MainReactActivity) getCurrentActivity();
         if (activity != null) {
             activity.myMethod("message");
