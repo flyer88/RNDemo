@@ -84,21 +84,6 @@ public class MainReactActivity extends ReactActivity {
         return super.onKeyUp(keyCode, event);
     }
 
-   /* public void senDataToReactNative() {
-
-        ReactContext reactContext = null;
-        try {
-            WritableMap event = Arguments.createMap();
-            event.putString("message", "MyMessage");
-            reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                    .emit("eventName", event);
-
-
-        } catch (Exception ex) {
-
-        }
-    }*/
-
     /**
      * My method string.
      *
