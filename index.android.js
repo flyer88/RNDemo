@@ -9,6 +9,8 @@ import {
   NativeModules,
 } from 'react-native';
 
+import { DeviceEventEmitter } from 'react-native';
+
 var RCTToastAndroid  = NativeModules.ToastCustomModule;
 
 class HelloWorld extends React.Component {
@@ -21,7 +23,10 @@ class HelloWorld extends React.Component {
     return (
       <View>
             <Text> { this.props.message }</Text>
-            <Text>Hello IOS </Text>
+            <Text>The instructions are a bit different depending on your development operating system, and whether you want to start developing for iOS or Android.
+             If you want to develop for both iOS and
+             Android,
+             with, since the setup is a bit different. </Text>
       </View>
     )
   }
@@ -29,8 +34,12 @@ class HelloWorld extends React.Component {
     componentDidMount()
     {
         RCTToastAndroid.showMessage('Awesome', (result) => {
-        console.log("line 31",result);
-      });
+        console.warn('Callback Method');
+       });
+
+      DeviceEventEmitter.addListener('qrCode', function(e: Event) {
+         console.warn('qrCode : ',e);
+        });
     }
 }
 var styles = StyleSheet.create({
