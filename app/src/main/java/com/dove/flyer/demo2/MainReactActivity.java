@@ -32,8 +32,7 @@ public class MainReactActivity extends ReactActivity {
         super.onCreate(savedInstanceState);
 
         Bundle initialProps = new Bundle();
-        initialProps.putString("message", "Welcome to React Native! This page will help you install React Native on your system, so that you can build apps with it right away. If you already have React Native installed, you can skip ahead to the Tutorial.\n" +
-                "\n");
+        initialProps.putString("message", "Welcome to React Native! This page will help you install React Native on your system, so that you can build apps with it right away. If you already have React Native installed, you can skip ahead to the Tutorial.");
 
         mReactRootView = new ReactRootView(MainReactActivity.this);
         mReactInstanceManager = ReactInstanceManager.builder()
@@ -52,14 +51,6 @@ public class MainReactActivity extends ReactActivity {
     }
 
 
-    private void sendEvent(ReactContext reactContext,
-                           String eventName,
-                           @Nullable WritableMap params) {
-        reactContext
-                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit(eventName, params);
-    }
-
     @Nullable
     @Override
     protected String getMainComponentName() {
@@ -73,9 +64,7 @@ public class MainReactActivity extends ReactActivity {
 
     @Override
     public void onBackPressed() {
-
         super.onBackPressed();
-
     }
 
     @Override
@@ -93,13 +82,9 @@ public class MainReactActivity extends ReactActivity {
      * @param message the message
      * @return the string
      */
-    public String activitySendEvent(String message) {
-
+    public void activitySendEvent(String message) {
         Toast.makeText(this, message + " React.ReactActivity ", Toast.LENGTH_SHORT).show();
         sendEventQrCode();
-        return "line 108";
-
-        //ToastCustomModule.sendEvent(reactContext,"sahir");
     }
 
     public void sendEventQrCode() {
@@ -110,6 +95,4 @@ public class MainReactActivity extends ReactActivity {
                     .emit("qrCode", qrCode);
         }
     }
-
-
 }
