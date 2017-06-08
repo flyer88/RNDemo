@@ -34,11 +34,11 @@ class HelloWorld extends React.Component {
     componentDidMount()
     {
        RCTToastAndroid.showMessage('Awesome', (result) => {
-        console.warn(result);
+      //  console.warn(result);
        });
 
        DeviceEventEmitter.addListener('qrCode', function(e: Event) {
-         console.warn('qrCode : ',e);
+      //   console.warn('qrCode : ',e);
         });
     }
 }

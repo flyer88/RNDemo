@@ -2,6 +2,8 @@ package com.dove.flyer.demo2;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
@@ -34,7 +36,10 @@ public class MainReactActivity extends ReactActivity {
         Bundle initialProps = new Bundle();
         initialProps.putString("message", "Welcome to React Native! This page will help you install React Native on your system, so that you can build apps with it right away. If you already have React Native installed, you can skip ahead to the Tutorial.");
 
-        mReactRootView = new ReactRootView(MainReactActivity.this);
+       //mReactRootView = new ReactRootView(MainReactActivity.this);
+        setContentView(R.layout.activity_main);
+
+
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
@@ -46,8 +51,16 @@ public class MainReactActivity extends ReactActivity {
                 .setCurrentActivity(MainReactActivity.this)
                 .build();
 
-        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", initialProps);
-        setContentView(mReactRootView);
+        mReactRootView = (ReactRootView) findViewById(R.id.react_root_view);
+      // mReactRootView.setLayoutParams(new ReactRootView.LayoutParams(50, 100));
+         mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", initialProps);
+
+       mReactRootView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+           }
+       });
     }
 
 
