@@ -1,30 +1,8 @@
-# RNDemo
+# React Native Bridge Android
+
 Integration With Existing Apps Demo
 
-Mine ENV is:
+React Native works well for adding a single view or user flow to existing native applications. With a few steps, you can add new React Native based features, screens, views, etc.
 
-```
-➜  RNDemo2 git:(master) npm -v
-3.10.8
-➜  RNDemo2 git:(master) react-native -v
-react-native-cli: 1.0.0
-react-native: 0.34.1
-
-```
-
-if you got this warning 
-
-```
-➜  RNDemo npm install
-npm WARN react-native@0.34.1 requires a peer of react@~15.3.1 but none was installed.
-npm WARN demo@1.0.0 No description
-npm WARN demo@1.0.0 No repository field.
-```
-
-just do
-
-```
-npm install --save react@~15.3.1
-
-```
+This Example used Android Native Toast Component. 
 
